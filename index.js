@@ -68,7 +68,7 @@ let mappedPokemons = (pokemons) => {
    let pokemonContainer = document.querySelector('#pokemons')
 
    pokemonContainer.innerHTML += `<div class="allpokemons">
-   <h2 class="pokemonName">${pokemon.name.toUpperCase()}</h2>
+   <h2 class="pokemonName">${pokemon?.name?.toUpperCase()}</h2>
    <img class="pokemonImage" src=${pokemon.img} alt=${pokemon.name}>
    <p class="pokemonHeight">Height: ${pokemon.height}m</p>
    </div>
@@ -115,7 +115,7 @@ let mappedPokemons = (pokemons) => {
           }
 
           pokemonContainer.innerHTML = `<div class="allpokemons">
-          <h2 class="pokemonName">${onePokemon[0].name?.toUpperCase()}</h2>
+          <h2 class="pokemonName">${onePokemon[0]?.name?.toUpperCase()}</h2>
           <img class="pokemonImage" src=${onePokemon[0].img} alt=${onePokemon[0].name}>
           <p class="pokemonHeight">Height: ${onePokemon[0].height}m</p>
           </div>
