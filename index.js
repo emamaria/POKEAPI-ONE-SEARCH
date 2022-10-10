@@ -1,9 +1,13 @@
+document.querySelector("#pokemons").innerHTML = "<h2 id='loading'>Loading...</h2>"
+
 window.onload = function(){
+
+
     init()
 
-  
+    console.log(document.querySelectorAll("#pokemons"))
+ 
 }
-
 
 const init = async() => {
 
@@ -16,8 +20,9 @@ const init = async() => {
     findOnePokemon(todosPokemon)
 
     showAllPokemon(todosPokemon)
-
-  
+    //here works as well
+    // const element = document.getElementById('loading');
+    // element.remove();
 
 }
 
@@ -31,8 +36,12 @@ const pokemons = async()=> {
         for(let i = 1; i <= 151; i++ ){
          
          let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+
+         console.log("pokemon content", pokemon)
     
          let resultPokemon =  await pokemon.json()
+
+         console.log(resultPokemon)
     
          result.push(resultPokemon)
     
@@ -64,6 +73,7 @@ let mappedPokemons = (pokemons) => {
    <p class="pokemonHeight">Height: ${pokemon.height}m</p>
    </div>
    `
+   
    
 }
 
@@ -105,7 +115,7 @@ let mappedPokemons = (pokemons) => {
           }
 
           pokemonContainer.innerHTML = `<div class="allpokemons">
-          <h2 class="pokemonName">${onePokemon[0].name.toUpperCase()}</h2>
+          <h2 class="pokemonName">${onePokemon[0].name?.toUpperCase()}</h2>
           <img class="pokemonImage" src=${onePokemon[0].img} alt=${onePokemon[0].name}>
           <p class="pokemonHeight">Height: ${onePokemon[0].height}m</p>
           </div>
@@ -137,7 +147,12 @@ let mappedPokemons = (pokemons) => {
 
         printPokemon(pokemons)
 
+        
+
     })
+
+    const element = document.getElementById('loading');
+        element.remove();
 
  })
 
