@@ -159,7 +159,7 @@ let mappedPokemons = (pokemons) => {
     button.addEventListener("click", function(){
 
     
-      debugger;
+     
         let pokemonContainer = document.querySelector('#pokemons')
     
         pokemonContainer.innerHTML = "";
