@@ -17,7 +17,11 @@ const init = async() => {
 
     mappedPokemons(todosPokemon)
 
+  
+
     findOnePokemon(todosPokemon)
+
+  
 
     showAllPokemon(todosPokemon)
     //here works as well
@@ -42,6 +46,8 @@ const pokemons = async()=> {
          let resultPokemon =  await pokemon.json()
 
          console.log(resultPokemon)
+
+        
     
          result.push(resultPokemon)
     
@@ -65,14 +71,22 @@ let mappedPokemons = (pokemons) => {
 
    let printPokemon = (pokemon) => {
 
-   let pokemonContainer = document.querySelector('#pokemons')
+   
 
+   let pokemonContainer = document.querySelector('#pokemons')
+ 
+   console.log("hola", pokemon.name)
+
+  if(pokemon.name){
+     
    pokemonContainer.innerHTML += `<div class="allpokemons">
    <h2 class="pokemonName">${pokemon?.name?.toUpperCase()}</h2>
    <img class="pokemonImage" src=${pokemon.img} alt=${pokemon.name}>
    <p class="pokemonHeight">Height: ${pokemon.height}m</p>
    </div>
    `
+  }
+  
    
    
 }
@@ -80,6 +94,8 @@ let mappedPokemons = (pokemons) => {
 
    const findOnePokemon = ((pokemonlist) => {
 
+
+     
 
     let button = document.querySelector("#searchButton")
 
@@ -135,19 +151,22 @@ let mappedPokemons = (pokemons) => {
 
  const showAllPokemon = ((pokemons)=> {
 
+  
+  
+
    let button = document.querySelector("#showAllButton")
 
     button.addEventListener("click", function(){
 
-        
-
+    
+      debugger;
         let pokemonContainer = document.querySelector('#pokemons')
     
         pokemonContainer.innerHTML = "";
 
         printPokemon(pokemons)
 
-        
+        //me ha dado undefined en este punto
 
     })
 
