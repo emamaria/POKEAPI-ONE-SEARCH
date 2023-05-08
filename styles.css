@@ -2,6 +2,13 @@ h1 {
   font-size: 90px;
   text-align: center;
 }
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .allpokemons {
   /* background-color: rgb(84, 223, 223); */
   background-color: lightgoldenrodyellow;
@@ -75,7 +82,33 @@ body {
     font-size: 40px;
   }
 
-  .errorMessage {
-    font-size: 25px;
+  .errorMessage{
+    font-size: 20px;
+    text-align: center;
   }
+
+  #searchInput {
+    width: 120px;
+    height: 25px;
+  }
+
+  #searchBox {
+    width: 200px;
+    height: 30px;
+  }
+
+
+  
+  #searchButton {
+    
+    font-size: 10px;
+   
+  }
+  
+  #showAllButton {
+    
+    font-size: 10px;
+    
+  }
+ 
 }
